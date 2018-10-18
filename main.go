@@ -30,7 +30,6 @@ type GifFrame struct {
 var (
 	dpi  = 72
 	fontfile = "/System/Library/Fonts/Menlo.ttc"
-	wonb = false
 )
 var size float64
 var pngX ,pngY int
@@ -151,10 +150,7 @@ func drawImg(str ,out string) {
 	}
 	fg,bg :=image.Black,image.White
 	ruler := color.RGBA{0x22,0x22,0x22,0xff}
-	if wonb {
-		fg, bg = image.White, image.Black
-		ruler = color.RGBA{0x22, 0x22, 0x22, 0xff}
-	}
+
 	my := strings.Split(str, "\n")
 	pngY = len(my)* int(size)
 	pngX = len([]byte(my[0]))*int(size)
